@@ -64,9 +64,18 @@ app.put("/users/:id", (req, res, next) => {
   });
 });
 
-app.put("/users", (req, res, next) => {
+//Delete Request
+app.delete("/users/:id", (req, res, next) => {
+  const id = parseInt(req.params.id);
+
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].id == id) {
+      users.splice(i, 1);
+    }
+  }
+
   res.json({
     success: true,
-    data: "DELETE Request",
+    data: users,
   });
 });
