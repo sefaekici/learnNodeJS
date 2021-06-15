@@ -112,36 +112,48 @@ const connectDatabase = () => {
 
 //Veritabanında Güncelleme İşlemi
 
-//Veritabanında kullanıcı id si ile bulunmuştur ve o idli kullanıcı güncellenmiştir.
-Customer.findById("60c8e381a0be1b113c014725", (err, data) => {
-  if (err) {
-    console.log(err);
-  } else {
-    //Gelen datanın boş olup olmadığı kontrol edilir.
-    if (data != null) {
-      //bulunan customerin city değeri değiştirildi ve save fonksiyonu yardımı ile yapılan değişiklik veritabanına etki etti.
-      data.city = "Gaziantep";
-      data
-        .save()
-        .then(() => console.log("Customer is updated!"))
-        .catch((err) => console.log(err));
-    } else console.log("Data is null");
-  }
-});
+// //Veritabanında kullanıcı id si ile bulunmuştur ve o idli kullanıcı güncellenmiştir.
+// Customer.findById("60c8e381a0be1b113c014725", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     //Gelen datanın boş olup olmadığı kontrol edilir.
+//     if (data != null) {
+//       //bulunan customerin city değeri değiştirildi ve save fonksiyonu yardımı ile yapılan değişiklik veritabanına etki etti.
+//       data.city = "Gaziantep";
+//       data
+//         .save()
+//         .then(() => console.log("Customer is updated!"))
+//         .catch((err) => console.log(err));
+//     } else console.log("Data is null");
+//   }
+// });
 
-//Veritabanından Silme İşlemi
-Customer.findById("60c8e381a0be1b113c014725", (err, data) => {
-  if (err) {
-    console.log(err);
-  } else {
-    if (data != null) {
-      //find by id ile bulunan kullanıcı alınan data yardımı ile veri tabanından silinebilir.
-      data
-        .remove()
-        .then(() => console.log("Customer is deleted..."))
-        .catch((err) => console.log(err));
-    } else console.log("Data is null");
-  }
-});
+// //Veritabanından Silme İşlemi
+// Customer.findById("60c8e381a0be1b113c014725", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     if (data != null) {
+//       //find by id ile bulunan kullanıcı alınan data yardımı ile veri tabanından silinebilir.
+//       data
+//         .remove()
+//         .then(() => console.log("Customer is deleted..."))
+//         .catch((err) => console.log(err));
+//     } else console.log("Data is null");
+//   }
+// });
+
+//findOneAndDelete vb işlemlerin uyguşanması da aynı şekildedir.
+// Customer.findOneAndUpdate(
+//   { name: "Sefa Ekici" },
+//   { name: "Sefa", city: "Sakarya" }
+// )
+//   .then(() => console.log("Başarılı"))
+//   .catch((err) => console.log(err));
+
+// Customer.update({ name: "Sefa" }, { $set: { name: "Sefa Ekici" } })
+//   .then(() => console.log("Güncelleme Başarılı!"))
+//   .catch((err) => console.log(err));
 
 module.exports = connectDatabase;
