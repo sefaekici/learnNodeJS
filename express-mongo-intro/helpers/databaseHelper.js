@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Customer = require("../models/customer");
 
 // let Customer1 = new Customer({
-//   name: "Aleyna Dikal",
+//   name: "Burak Ekici",
 //   city: "Tokat",
 // });
 
@@ -21,9 +21,16 @@ const connectDatabase = () => {
     .catch((err) => console.log(err));
 };
 
+//Databaseden veri getirme işlemi eğer {} olarak verilmiş olsaydı bütün dataları getirmiş olcaktı
+// Customer.find({ name: "Sefa Ekici" })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
 //Customer Veri Tabanına Kaydetme İşlemi
 // Customer1.save()
 //   .then(() => console.log("Kaydetme Başarılı"))
 //   .catch((err) => console.log(err));
+
+//Customer FindById
 
 module.exports = connectDatabase;
