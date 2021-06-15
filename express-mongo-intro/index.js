@@ -1,5 +1,5 @@
 const express = require("express");
-const connectDatabase = require("./helpers/connectDatabase");
+const connectDatabase = require("./helpers/databaseHelper");
 
 connectDatabase();
 
