@@ -1,13 +1,7 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const connectDatabase = require("./helpers/connectDatabase");
 
-//mongo db ye bağlanma işlemi ikinci paremetre olarak verilen nesne ise Deprecation Warnings olarak adlandırılan uyarı mesajlaraını engellemek içindir.
-mongoose.connect("mongodb://localhost:27017/mongoDbIntro", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
+connectDatabase();
 
 const app = express();
 const PORT = 5000;
