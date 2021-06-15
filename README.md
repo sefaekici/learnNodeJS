@@ -1,7 +1,7 @@
 Bu repo Node.js ve Express.js temellerini öğrenirken aldığım notları barındırıyor.
 
 
-Eğer kendi bilgisayarınızda çalıştırmak istiyorsanız dosyaların dizinlerinde komut satırında aşağıdaki komutlar yardımıyla gerekli paketleri yükleyebilirsiniz.
+Eğer kendi bilgisayarınızda çalıştırmak istiyorsanız dosyaların dizinlerine giderek komut satırında aşağıdaki komutları çalıştırarak paketleri yükleyebilir ve uygulamanızı local hostda çalıştırabilirsiniz.
 
 ```
 # install dependencies
